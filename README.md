@@ -22,7 +22,6 @@ See full version history on
 [Maven Central](https://central.sonatype.com/namespace/guru.nicks.commons), use as follows:
 
 ```xml
-
 <dependencyManagement>
     <dependencies>
         <dependency>
@@ -36,16 +35,19 @@ See full version history on
 </dependencyManagement>
 
 <dependencies>
-<dependency>
-    <groupId>guru.nicks.commons</groupId>
-    <artifactId>aws-s3-starter</artifactId>
-</dependency>
+    <dependency>
+        <groupId>guru.nicks.commons</groupId>
+        <artifactId>aws-s3-starter</artifactId>
+    </dependency>
 </dependencies>
 ```
 
 ## Documentation
 
 To browse the API documentation, click [here](https://nicks.guru/commons/commons-aws-s3-starter/apidocs).
+
+This software adheres to the BDD (Behavior-Driven Development) approach. See module usage examples in Cucumber
+test [scenarios](src/test/resources/cucumber/) and [steps](src/test/java/guru/nicks/cucumber/).
 
 ## Disclaimer
 
