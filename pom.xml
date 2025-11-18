@@ -5,14 +5,14 @@
     <parent>
         <groupId>guru.nicks.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>2.2511.3</version><!-- [PVM] -->
+        <version>2.2511.4</version><!-- [PVM] -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <!-- groupId is redundant (inherited from parent), but required by Maven Central -->
     <groupId>guru.nicks.commons</groupId>
     <artifactId>aws-s3-starter</artifactId>
-    <version>2.2511.3</version><!-- [PVM] -->
+    <version>2.2511.4</version><!-- [PVM] -->
 
     <name>Nicks.Guru Commons AWS S3 Starter</name>
     <description>Starter for storing files in AWS S3</description>
