@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0">
+    <parent>
+        <groupId>guru.nicks.commons</groupId>
+        <artifactId>parent</artifactId>
+        <version>2.2511.3</version><!-- [PVM] -->
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- groupId is redundant (inherited from parent), but required by Maven Central -->
+    <groupId>guru.nicks.commons</groupId>
+    <artifactId>aws-s3-starter</artifactId>
+    <version>2.2511.3</version><!-- [PVM] -->
+
+    <name>Nicks.Guru Commons AWS S3 Starter</name>
+    <description>Starter for storing files in AWS S3</description>
+    <url>https://github.com/nicksguru/commons-aws-s3-starter</url>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License, Version 3</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Nick S.</name>
+            <email>job-offers@nicks.guru</email>
+            <url>https://nicks.guru</url>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/nicksguru/commons-aws-s3-starter.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/nicksguru/commons-aws-s3-starter.git</developerConnection>
+        <url>https://github.com/nicksguru/commons-aws-s3-starter</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/nicksguru/commons-aws-s3-starter/issues</url>
+    </issueManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>guru.nicks.commons</groupId>
+            <artifactId>utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>guru.nicks.commons</groupId>
+            <artifactId>cucumber-test-starter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+        </dependency>
+        <!-- @NonNullApi -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+
+        <!-- @ConstraintArguments -->
+        <dependency>
+            <groupId>am.ik.yavi</groupId>
+            <artifactId>yavi</artifactId>
+        </dependency>
+        <!-- @Builder, @Slf4j, etc. -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,27 @@
+# everything that starts with a dot
+.*
+
+*.iml
+target/
+*.class
+
+tmp/
+*.tmp
+*.log
+*.log.*
+*.swp
+*.bak
+
+# certificates
+*.jks
+*.p12
+*.pem
+*.der
+*.csr
+*.crt
+*.key
+*.key~
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+.attach_pid*
