@@ -27,7 +27,7 @@ See full version history on
         <dependency>
             <groupId>guru.nicks.commons</groupId>
             <artifactId>bom</artifactId>
-            <version>100.2511.1</version>
+            <version>100.2511.2</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
