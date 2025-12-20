@@ -27,7 +27,7 @@ See full version history on
         <dependency>
             <groupId>guru.nicks.commons</groupId>
             <artifactId>bom</artifactId>
-            <version>100.2512.9</version>
+            <version>100.2512.10</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
@@ -54,4 +54,4 @@ test [scenarios](src/test/resources/cucumber/) and [steps](src/test/java/guru/ni
 THIS CODE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED
 TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. USE AT YOUR OWN RISK.
 
-Copyright © 2025 [nicks.guru](https://nicks.guru). All rights reserved.
+Copyright © 2025-2026 [nicks.guru](https://nicks.guru). All rights reserved.
