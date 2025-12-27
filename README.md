@@ -8,13 +8,14 @@ Starter for storing files in AWS S3.
 
 ## Versioning
 
-The version format is inspired by [Scalver](https://scalver.org) and looks like `M.yymm.N` (in UTC timezone), where:
+The version format is inspired by [Scalver](https://scalver.org) and looks like `M.yymmdd.N` (in UTC timezone), where:
 
 * `M`  - major version, same as in [SemVer](https://semver.org): starts from 0, increments in case of backwards
   incompatibility
 * `yy` - year minus 2000: 25 for 2025, 100 for 2100
 * `mm` - month (zero-padded): 01 = Jan, 02 = Feb, 12 = Dec
-* `N`  - incremental build number, starts from 0 every month
+* `dd` - day of month (zero-padded): 01 to 31
+* `N`  - incremental build number, starts from 0 every day
 
 ## Usage
 
@@ -27,7 +28,7 @@ See full version history on
         <dependency>
             <groupId>guru.nicks.commons</groupId>
             <artifactId>bom</artifactId>
-            <version>100.2512.12</version>
+            <version>100.251227.0</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
