@@ -138,7 +138,7 @@ public class S3CloudFileStorageServiceImpl implements CloudFileStorageService {
 
         var request = ListObjectsV2Request.builder()
                 .bucket(s3Uri.bucket().orElseThrow())
-                .prefix(path)
+                .prefix(s3Uri.key().orElseThrow())
                 .build();
 
         return s3Client.listObjectsV2Paginator(request)
@@ -184,7 +184,7 @@ public class S3CloudFileStorageServiceImpl implements CloudFileStorageService {
 
         var request = HeadObjectRequest.builder()
                 .bucket(uri.bucket().orElseThrow())
-                .key(uri.bucket().orElseThrow())
+                .key(uri.key().orElseThrow())
                 .build();
 
         HeadObjectResponse objectHead;
