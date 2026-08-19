@@ -18,13 +18,14 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
-import software.amazon.awssdk.core.ResponseBytes;
+import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.S3Uri;
 import software.amazon.awssdk.services.s3.S3Utilities;
 import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import software.amazon.awssdk.services.s3.model.GetObjectResponse;
 import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
 import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
@@ -236,9 +237,10 @@ public class S3CloudFileStorageServiceSteps {
         when(mockS3Uri.key())
                 .thenReturn(Optional.of("path/nonexistent.txt"));
 
-        // mock exception for the non-existent file
+        // mock exception for the non-existent file: only HTTP 404 is treated as 'not found', other AWS errors are
+        // rethrown as is
         when(s3Client.headObject(any(HeadObjectRequest.class)))
-                .thenThrow(AwsServiceException.builder().message("Not Found").build());
+                .thenThrow(AwsServiceException.builder().message("Not Found").statusCode(404).build());
     }
 
     @When("the file is found by filename")
@@ -273,13 +275,10 @@ public class S3CloudFileStorageServiceSteps {
 
     @When("the input stream is requested for the file")
     public void theInputStreamIsRequestedForTheFile() {
-        // mock response bytes for getObjectAsBytes
-        var responseBytes = mock(ResponseBytes.class);
-        when(responseBytes.asInputStream())
-                .thenReturn(new ByteArrayInputStream("file content".getBytes()));
-
-        when(s3Client.getObjectAsBytes(any(GetObjectRequest.class)))
-                .thenReturn(responseBytes);
+        // mock streamed response for getObject
+        when(s3Client.getObject(any(GetObjectRequest.class)))
+                .thenReturn(new ResponseInputStream<>(GetObjectResponse.builder().build(),
+                        new ByteArrayInputStream("file content".getBytes())));
 
         textWorld.setLastException(catchThrowable(() ->
                 fileInputStream = s3CloudFileStorageService.getInputStream(filename)
