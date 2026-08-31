@@ -1,4 +1,4 @@
-package guru.nicks.cucumber;
+package guru.nicks.commons.cucumber;
 
 import guru.nicks.commons.cucumber.world.TextWorld;
 

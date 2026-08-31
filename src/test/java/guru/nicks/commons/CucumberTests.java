@@ -1,4 +1,4 @@
-package guru.nicks;
+package guru.nicks.commons;
 
 import guru.nicks.commons.cucumber.CucumberTestsBase;
 
