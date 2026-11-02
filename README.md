@@ -28,7 +28,8 @@ See full version history on
         <dependency>
             <groupId>guru.nicks.commons</groupId>
             <artifactId>bom</artifactId>
-            <version>100.261014.0</version>
+            <!-- 400.* for Sprint Boot 4; 300.* for Spring Boot 3 -->
+            <version>300.261102.0</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
